@@ -1,0 +1,181 @@
+/* --- CSS Variables and General Setup --- */
+:root {
+    --color-dark: #1A202C;
+    --color-text: #4A5568;
+    --color-text-light: #A0AEC0;
+    --color-light-gray: #F7FAFC;
+    --color-border: #E2E8F0;
+    --color-white: #FFFFFF;
+    --color-accent: #F56565;
+    --font-family: 'Inter', sans-serif;
+    --container-width: 1140px;
+    --border-radius: 4px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--color-dark);
+    line-height: 1.6;
+    background-color: var(--color-white);
+    font-size: 16px;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: 100px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary { background-color: var(--color-white); color: var(--color-dark); }
+.btn-primary:hover { background-color: #f0f0f0; }
+
+.btn-dark { background-color: var(--color-dark); color: var(--color-white); }
+.btn-dark:hover { background-color: #333; }
+
+.btn-secondary { background-color: var(--color-white); color: var(--color-dark); border: 1px solid var(--color-border); }
+.btn-secondary:hover { background-color: var(--color-light-gray); }
+
+.btn-accent { background-color: #F97316; color: var(--color-white); }
+.btn-accent:hover { background-color: #EA580C; }
+
+/* --- Header & Navigation --- */
+.header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 25px 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-white);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+.logo svg { margin-right: 10px; }
+
+.nav-links { list-style: none; display: flex; gap: 40px; }
+.nav-links a { text-decoration: none; color: var(--color-white); font-weight: 500; font-size: 14px; }
+
+.nav-actions { display: flex; align-items: center; gap: 20px; }
+.nav-actions .sign-in { color: var(--color-white); text-decoration: none; font-weight: 500; font-size: 14px; }
+
+
+/* --- Hero Section --- */
+.hero {
+    height: 680px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1974&auto-format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    padding: 0;
+}
+.hero-content { margin-left: calc((100% - var(--container-width)) / 2 + 20px); }
+.hero-content p { font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 1rem; }
+.hero-content h1 { font-size: 3.75rem; font-weight: 800; line-height: 1.1; margin-bottom: 2rem; }
+
+/* --- Info Section (Since 1989) --- */
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: flex-start; }
+.info-left h2, .vision-text h2 { font-size: 2.25rem; font-weight: 700; color: var(--color-dark); margin-bottom: 1rem; }
+.info-left p, .info-right p, .vision-text p { font-size: 16px; color: var(--color-text); margin-bottom: 2rem; }
+.info-left img { margin-top: 1rem; border-radius: var(--border-radius); }
+.info-right img { margin-bottom: 2rem; border-radius: var(--border-radius); }
+.info-right { margin-top: 50px; }
+
+/* --- Vision Section --- */
+.vision-section { background-color: var(--color-light-gray); }
+.vision-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 100px; align-items: center; }
+.vision-text h3 { font-size: 1.125rem; font-weight: 500; color: #718096; margin-bottom: 1.5rem; }
+.vision-image img { border-radius: var(--border-radius); }
+
+/* --- Partners Section --- */
+.partners-section { background-color: var(--color-white); }
+.partners-header { text-align: center; margin: 0 auto 50px auto; }
+.partners-header h2 { font-size: 1.875rem; font-weight: 600; line-height: 1.4; }
+.partner-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 60px; }
+.partner-logos img { height: 28px; filter: grayscale(100%); opacity: 0.6; transition: all 0.3s ease; }
+.partner-logos img:hover { filter: grayscale(0%); opacity: 1; }
+
+/* --- Support Journey Section --- */
+.support-section { background-color: var(--color-light-gray); }
+.support-header { text-align: center; margin: 0 auto 50px auto; }
+.support-header h2 { font-size: 2.25rem; font-weight: 700; }
+.support-header p { color: var(--color-text); font-size: 1rem; }
+.support-grid { display: grid; grid-template-columns: 5fr 4fr; grid-template-rows: 1fr 1fr; gap: 20px; }
+
+.support-card { position: relative; border-radius: var(--border-radius); overflow: hidden; color: var(--color-white); }
+.support-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.support-card:hover img { transform: scale(1.05); }
+.support-card.large { grid-row: span 2; }
+
+.card-overlay { position: absolute; bottom: 0; left: 0; width: 100%; padding: 40px 30px 30px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); z-index: 2; }
+.card-overlay h3 { font-size: 1.875rem; margin-bottom: 0.5rem; font-weight: 700; }
+.card-overlay a { color: var(--color-white); text-decoration: none; font-weight: 600; font-size: 14px; }
+.card-overlay a:hover { text-decoration: underline; }
+
+/* --- Testimonials Section --- */
+.testimonials-header { text-align: center; margin-bottom: 50px; }
+.testimonials-header h2 { font-size: 2.25rem; font-weight: 700; }
+.testimonials-header p { color: var(--color-text); margin: 1rem 0 1.5rem 0; }
+.testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background-color: var(--color-border); border: 1px solid var(--color-border); }
+.testimonial-card { background-color: #fff; padding: 40px; }
+.testimonial-card .stars { color: #FBBF24; margin-bottom: 1.5rem; }
+.testimonial-card .author { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 1.5rem; }
+.author img { width: 50px; height: 50px; border-radius: 50%; margin-bottom: 1rem; }
+.author h4 { font-weight: 600; font-size: 1rem; }
+.testimonial-card p { font-size: 0.95rem; color: var(--color-text); text-align: center; }
+
+/* --- CTA Banner Section --- */
+.cta-banner { padding: 0; height: 450px; }
+.cta-banner img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- Footer --- */
+.footer { background-color: var(--color-dark); color: var(--color-text-light); padding: 80px 0; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; }
+.footer h4 { color: var(--color-white); margin-bottom: 1.5rem; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+.footer-about p { margin-bottom: 1.5rem; max-width: 300px; font-size: 14px; }
+.social-links a { color: var(--color-text-light); margin-right: 15px; font-size: 1rem; transition: color 0.3s ease; }
+.social-links a:hover { color: var(--color-white); }
+.footer-links ul { list-style: none; }
+.footer-links li { margin-bottom: 1rem; }
+.footer-links a { color: var(--color-text-light); text-decoration: none; transition: color 0.3s ease; font-size: 14px; }
+.footer-links a:hover { color: var(--color-white); }
